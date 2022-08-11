@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun initWorker() {
         val worker = OneTimeWorkRequest.Builder(SessionWorker::class.java)
-            .setInitialDelay(30, TimeUnit.SECONDS)
+            .setInitialDelay(2, TimeUnit.MINUTES)
             .build()
         WorkManager.getInstance(this).enqueue(worker)
     }
