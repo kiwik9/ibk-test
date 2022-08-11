@@ -46,6 +46,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
+        <TextView
+            android:id="@+id/txt_error"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:text="Error"
+            android:visibility="gone"
+            android:textColor="@color/red"
+            android:layout_height="wrap_content"/>
+
         <Button
             android:id="@+id/btn_login"
             android:text="ingresar"

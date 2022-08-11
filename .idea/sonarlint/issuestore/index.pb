@@ -1,18 +1,8 @@
 
-i
-9app/src/main/java/io/kiwik/ibkapp/ui/home/HomeActivity.kt,1/3/1364d5826e26e06669148d298ef93aa462952bd1
 d
 4app/src/main/java/io/kiwik/ibkapp/ui/BaseActivity.kt,9/e/9e59e7a79b4914277b18a2ccc9983c176dbb28b6
-d
-4app/src/main/java/io/kiwik/ibkapp/ui/BaseFragment.kt,4/5/457cbe05bdb4b476760f423ea3472b69e29cd015
 |
 Lapp/src/main/java/io/kiwik/ibkapp/ui/product_detail/ProductDetailActivity.kt,b/0/b09b5d65e7a0d852c1a00b4b2dea3ec43ec8263b
-}
-Mapp/src/main/java/io/kiwik/ibkapp/ui/product_detail/ProductDetailViewModel.kt,6/7/677e21d44eb1ddb9be68f94c63fb2fe449b35190
-l
-<app/src/main/java/io/kiwik/ibkapp/ui/login/LoginViewModel.kt,3/3/338e69b8dd0e46329a759f8430d8775911bc27f4
-k
-;app/src/main/java/io/kiwik/ibkapp/ui/login/LoginActivity.kt,c/1/c19d23129d20819f7074c664ea975eb66239f70f
 v
 Fapp/src/main/java/io/kiwik/ibkapp/ui/home/products/ProductsFragment.kt,d/a/daf98bc6ea858f2e07cd65d4901aa956bd632fdc
 w
@@ -37,12 +27,8 @@ c
 3data/src/main/java/io/kiwik/data/model/UserModel.kt,c/f/cf8b04091cb97181312c74f1c96eae68dc74e732
 e
 5domain/src/main/java/io/kiwik/domain/model/Product.kt,2/d/2d410a0036b0a25246214062977a3e9c813eef63
-i
-9domain/src/main/java/io/kiwik/domain/util/BaseResponse.kt,0/1/01f472d2f5590fdf7a9b7ab3d4ac6c6992c27b74
 k
 ;domain/src/main/java/io/kiwik/domain/util/ResponseStatus.kt,2/5/2534f36f336151ccbc04873f97d2d6b0a032f8ba
-
-Qdata/src/main/java/io/kiwik/data/sharedPreferences/AppSharedPreferencesManager.kt,1/0/104cc59417e18e29a82db3b7890fd0303d860e34
 G
 dein/consumer-rules.pro,a/5/a5d7da4e2047209ad81c36c2f34f5c9005ee1964
 G
@@ -53,12 +39,8 @@ S
 #domain/src/main/AndroidManifest.xml,4/6/46c5973a8a062650780ae254450fba029a8b5598
 i
 9domain/src/main/java/io/kiwik/domain/model/Transaction.kt,9/e/9ed717f4dceb7affc08bcf0e6bde9d92db552c38
-A
-dein/build.gradle,4/2/42b4bf0ecb1222b53f24d42cbad043cc3f764065
 a
 1data/src/main/java/io/kiwik/data/api/ApiClient.kt,b/3/b3c663c9b31d66f2b3a02284442ef8755ad7aa84
-A
-data/build.gradle,7/2/72c2781d3d9ac8b82a3543f0fba5c796b2975232
 l
 <data/src/main/java/io/kiwik/data/api/request/LoginRequest.kt,c/7/c70fd00c799737075de03a377b24ec0c3cccfd42
 g
@@ -67,5 +49,3 @@ a
 1data/src/main/java/io/kiwik/data/util/ApiError.kt,9/4/94c086573b61fc1fc5dbe12ef024b86d4ef51686
 b
 2data/src/main/java/io/kiwik/data/api/ApiService.kt,1/0/10f3464671d889b4b64ddcaf5965a21c9107e969
-P
- app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e

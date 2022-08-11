@@ -45,11 +45,19 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
 
+    //Workers
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+
     //JodaTime
     implementation 'net.danlew:android.joda:2.10.14'
+
     //Koin
     implementation "io.insert-koin:koin-core:3.2.0"
+    implementation "io.insert-koin:koin-android:3.2.0"
+
     implementation project(path: ':dein')
+    implementation project(path: ':domain')
+    implementation project(path: ':data')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
