@@ -11,6 +11,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/IBK_App.data.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/IBK_App.data.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/IBK_App.data.main.iml" filepath="$PROJECT_DIR$/.idea/modules/data/IBK_App.data.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/IBK_App.data.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/data/IBK_App.data.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.test.iml" />

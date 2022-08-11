@@ -16,3 +16,4 @@ rootProject.name = "IBK App"
 include ':app'
 include ':domain'
 include ':data'
+include ':dein'

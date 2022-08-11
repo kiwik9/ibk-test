@@ -4,6 +4,7 @@
     <bytecodeTargetLevel target="1.7">
       <module name="IBK_App.app" target="11" />
       <module name="IBK_App.data" target="11" />
+      <module name="IBK_App.dein" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
