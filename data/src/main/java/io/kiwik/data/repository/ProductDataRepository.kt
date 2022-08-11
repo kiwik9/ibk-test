@@ -31,9 +31,9 @@ class ProductDataRepository : KoinComponent {
        */
         val response = FetchProductsResponse(
             listOf(
-                ProductModel("1", "Cuenta Ahorro", "", 124.0),
-                ProductModel("2", "Cuenta Sueldo", "", 20.40),
-                ProductModel("3", "Cuanta Ahorro 2", "", 2040.0)
+                ProductModel("1", "Cuenta Ahorro", "123-123-123-123", 124.0),
+                ProductModel("2", "Cuenta Sueldo", "123-456-793-321", 20.40),
+                ProductModel("3", "Cuanta Ahorro 2", "123-321-321-243", 2040.0)
             )
         )
         return BaseApiResponse.success(response)

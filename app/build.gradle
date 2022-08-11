@@ -55,6 +55,10 @@ dependencies {
     implementation "io.insert-koin:koin-core:3.2.0"
     implementation "io.insert-koin:koin-android:3.2.0"
 
+    //UI
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+
     implementation project(path: ':dein')
     implementation project(path: ':domain')
     implementation project(path: ':data')

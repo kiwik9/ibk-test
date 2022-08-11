@@ -1,12 +1,4 @@
 
-d
-4app/src/main/java/io/kiwik/ibkapp/ui/BaseActivity.kt,9/e/9e59e7a79b4914277b18a2ccc9983c176dbb28b6
-|
-Lapp/src/main/java/io/kiwik/ibkapp/ui/product_detail/ProductDetailActivity.kt,b/0/b09b5d65e7a0d852c1a00b4b2dea3ec43ec8263b
-v
-Fapp/src/main/java/io/kiwik/ibkapp/ui/home/products/ProductsFragment.kt,d/a/daf98bc6ea858f2e07cd65d4901aa956bd632fdc
-w
-Gapp/src/main/java/io/kiwik/ibkapp/ui/home/products/ProductsViewModel.kt,3/3/3326096c318bf88ea354c45fd72bc1946e455dcd
 {
 Kapp/src/main/java/io/kiwik/ibkapp/ui/home/operations/OperationsViewModel.kt,e/a/ea8bc8e7828d50253b3c4f74613c4a491d11fa94
 Q
