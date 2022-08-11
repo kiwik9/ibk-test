@@ -16,8 +16,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/dein/IBK_App.dein.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.main.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.test.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/domain/IBK_App.domain.unitTest.iml" />
     </modules>
   </component>
 </project>

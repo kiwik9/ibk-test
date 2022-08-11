@@ -1,4 +1,5 @@
 package io.kiwik.domain
 
-class MyClass {
+abstract class UseCase {
+
 }
