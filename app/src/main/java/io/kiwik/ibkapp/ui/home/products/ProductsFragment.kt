@@ -18,10 +18,9 @@ import kotlinx.coroutines.launch
 
 class ProductsFragment : BaseFragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: ProductListAdapter
     private lateinit var viewModel: ProductsViewModel
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,7 +28,7 @@ class ProductsFragment : BaseFragment() {
         savedInstanceState: Bundle?
     ): View {
         setViewModel()
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -80,10 +79,5 @@ class ProductsFragment : BaseFragment() {
             intent.putExtra(Constants.KEY_PRODUCT_ACCOUNT, it.accountNumber)
             startActivity(intent)
         }
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
     }
 }

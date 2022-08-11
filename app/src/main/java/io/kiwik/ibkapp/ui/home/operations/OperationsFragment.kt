@@ -10,8 +10,7 @@ import io.kiwik.ibkapp.ui.BaseFragment
 
 class OperationsFragment : BaseFragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentDashboardBinding
     private lateinit var viewModel: OperationsViewModel
 
     override fun onCreateView(
@@ -19,7 +18,7 @@ class OperationsFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        binding = FragmentDashboardBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,8 +26,8 @@ class OperationsFragment : BaseFragment() {
         viewModel = ViewModelProvider(this)[OperationsViewModel::class.java]
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    override fun onStart() {
+        super.onStart()
+        setViewModel()
     }
 }

@@ -10,7 +10,7 @@ class SharedTextUtil {
         fun getSharedText(
             accountNumber: String
         ): String {
-            return "Mi numero de cuenta: \n $accountNumber"
+            return "Mi numero de cuenta:\n$accountNumber"
         }
 
         fun shareContent(context: Context, content: String) {

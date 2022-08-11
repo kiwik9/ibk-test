@@ -55,7 +55,7 @@ class TransactionListAdapter(private val context: Context) :
             }
 
             binding.txtTitle.text = item.name
-            binding.txtAmount.text = "${item.transactionAmount}"
+            binding.txtAmount.text = "S/ ${item.transactionAmount}"
             binding.txtAmount.setTextColor(getColorByAmount(item.transactionAmount))
             binding.txtSubTitle.text = item.date.toString(DateTimeFormat.mediumDate())
 

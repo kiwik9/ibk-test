@@ -58,10 +58,8 @@ dependencies {
     //UI
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
-
     implementation project(path: ':dein')
     implementation project(path: ':domain')
-    implementation project(path: ':data')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
