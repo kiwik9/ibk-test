@@ -1,4 +1,7 @@
 package io.kiwik.data.api.response
 
-class FetchProductsResponse {
-}
+import io.kiwik.data.model.ProductModel
+
+data class FetchProductsResponse(
+    val products: List<ProductModel>
+)

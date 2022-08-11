@@ -1,16 +1,21 @@
 package io.kiwik.domain.repository.auth
 
-import io.kiwik.domain.model.Product
+import io.kiwik.data.repository.AuthDataRepository
 import io.kiwik.domain.util.BaseResponse
+import io.kiwik.domain.util.toResponse
 
-class AuthRepository : IAuthRepository{
+class AuthRepository : IAuthRepository {
 
-    override suspend fun login(): BaseResponse<List<Product>> {
-        TODO("Not yet implemented")
+    private val authDataRepository: AuthDataRepository by lazy {
+        AuthDataRepository()
+    }
+
+    override suspend fun login(user: String, password: String): BaseResponse<Boolean> {
+        return authDataRepository.login(user, password).toResponse()
     }
 
     override suspend fun signOut(): BaseResponse<Boolean> {
-        TODO("Not yet implemented")
+        return authDataRepository.signOut().toResponse()
     }
 
 }

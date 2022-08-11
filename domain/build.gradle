@@ -12,6 +12,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -36,6 +37,10 @@ dependencies {
 
     //JodaTime
     implementation 'net.danlew:android.joda:2.10.14'
+    //Koin
+    implementation "io.insert-koin:koin-core:3.2.0"
+
+    implementation project(path: ':data')
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
