@@ -1,25 +1,36 @@
 package io.kiwik.ibkapp.ui
 
 import android.content.Intent
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import io.kiwik.data.sharedPreferences.AppSharedPreferencesManager
+import androidx.lifecycle.lifecycleScope
+import io.kiwik.domain.interactors.GetCurrentSessionUseCase
 import io.kiwik.ibkapp.ui.login.LoginActivity
+import kotlinx.coroutines.launch
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
 abstract class BaseActivity : AppCompatActivity(), KoinComponent {
-    private val sharedPreferences by inject<AppSharedPreferencesManager>()
 
-    override fun onResume() {
-        super.onResume()
+    private val currentSessionUseCase by inject<GetCurrentSessionUseCase>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         validateSession()
     }
 
     private fun validateSession() {
-        if (!sharedPreferences.getSession()) {
-            finish()
-            startActivity(Intent(this, LoginActivity::class.java))
+        lifecycleScope.launch {
+            val result = currentSessionUseCase.execute().result
+            if (result == false) {
+                toLoginActivity()
+            }
         }
+    }
+
+    private fun toLoginActivity() {
+        finish()
+        startActivity(Intent(this, LoginActivity::class.java))
     }
 
 }

@@ -18,4 +18,8 @@ class AuthRepository : IAuthRepository {
         return authDataRepository.signOut().toResponse()
     }
 
+    override suspend fun isLogged(): BaseResponse<Boolean> {
+        return BaseResponse.success(authDataRepository.isLogged())
+    }
+
 }

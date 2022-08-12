@@ -2,18 +2,15 @@ package io.kiwik.ibkapp.ui.product_detail
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import io.kiwik.domain.util.ResponseStatus
+import io.kiwik.domain.model.Transaction
 import io.kiwik.ibkapp.databinding.ActivityProductDetailBinding
-import io.kiwik.ibkapp.ui.BaseActivity
 import io.kiwik.ibkapp.ui.adapter.TransactionListAdapter
-import io.kiwik.ibkapp.utils.Constants
-import io.kiwik.ibkapp.utils.SharedTextUtil
-import io.kiwik.ibkapp.utils.isNull
-import io.kiwik.ibkapp.utils.showToast
+import io.kiwik.ibkapp.utils.*
 import kotlinx.coroutines.launch
 
-class ProductDetailActivity : BaseActivity() {
+class ProductDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailBinding
     private lateinit var adapter: TransactionListAdapter
@@ -76,16 +73,21 @@ class ProductDetailActivity : BaseActivity() {
         lifecycleScope.launch {
             viewModel.getTransactions().collect {
                 binding.swipeRefresh.isRefreshing = false
-                when (it.responseStatus) {
-                    ResponseStatus.SUCCESS -> {
-                        adapter.submitList(it.result!!.sortedByDescending { x -> x.date })
-                    }
-                    else -> {
-                        showToast(it.messageResponse)
-                    }
+                if (it.result.isNotNull()) {
+                    onSuccessGetTransactions(it.result!!)
+                } else {
+                    onErrorGetTransactions(it.message)
                 }
             }
         }
+    }
+
+    private fun onSuccessGetTransactions(list: List<Transaction>) {
+        adapter.submitList(list)
+    }
+
+    private fun onErrorGetTransactions(message: String) {
+        showToast(message)
     }
 
     private fun setAdapter() {

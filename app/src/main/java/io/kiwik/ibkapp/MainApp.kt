@@ -24,7 +24,8 @@ class MainApp : Application() {
                     networkApiService,
                     appSharedPreferences,
                     authRepository,
-                    productRepository
+                    productRepository,
+                    currentSessionUseCase
                 )
             )
         }

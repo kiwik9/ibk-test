@@ -8,3 +8,4 @@ fun Context.showToast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 }
 
 fun Any?.isNull() = this == null
+fun Any?.isNotNull() = this != null

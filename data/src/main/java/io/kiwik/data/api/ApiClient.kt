@@ -17,16 +17,16 @@ class ApiClient {
     }
 
     private val httpClient: OkHttpClient
-     get() {
-        return OkHttpClient.Builder()
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .build()
-    }
+        get() {
+            return OkHttpClient.Builder()
+                .connectTimeout(60, TimeUnit.SECONDS)
+                .readTimeout(60, TimeUnit.SECONDS)
+                .writeTimeout(60, TimeUnit.SECONDS)
+                .build()
+        }
 
-    fun <T> createService(serviceClass: Class<T>): T {
-        return getClient().create(serviceClass)
+    fun <T> createRetrofitService(service: Class<T>): T {
+        return getClient().create(service)
     }
 
 }

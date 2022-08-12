@@ -3,6 +3,7 @@ package io.kiwik.ibkapp.ui.login
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.os.Message
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,8 @@ import androidx.work.WorkManager
 import io.kiwik.domain.util.ResponseStatus
 import io.kiwik.ibkapp.databinding.ActivityLoginBinding
 import io.kiwik.ibkapp.ui.home.HomeActivity
+import io.kiwik.ibkapp.utils.isNotNull
+import io.kiwik.ibkapp.utils.isNull
 import io.kiwik.ibkapp.workers.SessionWorker
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
@@ -54,26 +57,29 @@ class LoginActivity : AppCompatActivity() {
 
     private fun login() {
         lifecycleScope.launch {
-            viewModel.loginResponse.collect {
-                when (it.responseStatus) {
-                    ResponseStatus.SUCCESS -> {
-                        binding.txtError.isVisible = false
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                            initWorker()
-                        }
-                        finish()
-                        startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-                    }
-                    else -> {
-                        binding.txtError.isVisible = true
-                        binding.txtError.text = it.messageResponse
-                    }
+            viewModel.login().collect {
+                if (it.result == true) {
+                    onLoginSuccess()
+                } else {
+                    onLoginError(it.message)
                 }
             }
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+
+    private fun onLoginSuccess(){
+        binding.txtError.isVisible = false
+        initWorker()
+        finish()
+        startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
+    }
+
+    private fun onLoginError(message: String) {
+        binding.txtError.isVisible = true
+        binding.txtError.text = message
+    }
+
     private fun initWorker() {
         val worker = OneTimeWorkRequest.Builder(SessionWorker::class.java)
             .setInitialDelay(2, TimeUnit.MINUTES)

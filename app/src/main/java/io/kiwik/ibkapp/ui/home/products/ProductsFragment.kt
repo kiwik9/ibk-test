@@ -5,18 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import io.kiwik.domain.util.ResponseStatus
+import io.kiwik.domain.model.Product
 import io.kiwik.ibkapp.databinding.FragmentHomeBinding
-import io.kiwik.ibkapp.ui.BaseFragment
 import io.kiwik.ibkapp.ui.adapter.ProductListAdapter
 import io.kiwik.ibkapp.ui.product_detail.ProductDetailActivity
 import io.kiwik.ibkapp.utils.Constants
+import io.kiwik.ibkapp.utils.isNotNull
 import io.kiwik.ibkapp.utils.showToast
 import kotlinx.coroutines.launch
 
-class ProductsFragment : BaseFragment() {
+class ProductsFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var adapter: ProductListAdapter
@@ -57,16 +58,21 @@ class ProductsFragment : BaseFragment() {
         lifecycleScope.launch {
             viewModel.getProducts().collect {
                 binding.swipeRefresh.isRefreshing = false
-                when (it.responseStatus) {
-                    ResponseStatus.SUCCESS -> {
-                        adapter.submitList(it.result!!)
-                    }
-                    else -> {
-                        requireContext().showToast(it.messageResponse)
-                    }
+                if (it.result.isNotNull()) {
+                    onGetProductsSuccess(it.result!!)
+                } else {
+                    onGetProductsFailed(it.message)
                 }
             }
         }
+    }
+
+    private fun onGetProductsSuccess(products: List<Product>) {
+        adapter.submitList(products)
+    }
+
+    private fun onGetProductsFailed(message: String) {
+        requireContext().showToast(message)
     }
 
     private fun setAdapter() {

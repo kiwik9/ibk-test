@@ -9,8 +9,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import io.kiwik.ibkapp.R
 import io.kiwik.ibkapp.databinding.ActivityMainBinding
+import io.kiwik.ibkapp.ui.BaseActivity
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

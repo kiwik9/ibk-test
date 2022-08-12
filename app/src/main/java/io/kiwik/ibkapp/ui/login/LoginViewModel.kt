@@ -2,6 +2,8 @@ package io.kiwik.ibkapp.ui.login
 
 import androidx.lifecycle.ViewModel
 import io.kiwik.domain.interactors.LoginUseCase
+import io.kiwik.domain.util.ResponseStatus
+import io.kiwik.ibkapp.utils.ResponseView
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.flow
@@ -39,10 +41,16 @@ class LoginViewModel : ViewModel(), KoinComponent {
         userIsValid and passwordIsValid
     }
 
-    val loginResponse = flow {
+    fun login() = flow {
         val result = loginUseCase.execute(getUser(), getPassword())
-        emit(result)
+        when (result.responseStatus) {
+            ResponseStatus.SUCCESS -> {
+                emit(ResponseView.success(result.result))
+            }
+            else -> {
+                emit(ResponseView.error(result.messageResponse))
+            }
+        }
     }
-
 
 }

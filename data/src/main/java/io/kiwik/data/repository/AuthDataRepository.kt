@@ -1,12 +1,6 @@
 package io.kiwik.data.repository
 
-import io.kiwik.data.api.ApiClient
-import io.kiwik.data.api.ApiService
 import io.kiwik.data.api.BaseApiResponse
-import io.kiwik.data.api.request.FetchProductsRequest
-import io.kiwik.data.api.request.LoginRequest
-import io.kiwik.data.api.response.FetchProductsResponse
-import io.kiwik.data.api.response.LoginResponse
 import io.kiwik.data.sharedPreferences.AppSharedPreferencesManager
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -26,6 +20,10 @@ class AuthDataRepository : KoinComponent {
             return BaseApiResponse.success(sharedPreferences.getSession())
         }
         return BaseApiResponse.errorWithMessage("Usuario y/o contrasena incorrecta.")
+    }
+
+    suspend fun isLogged(): Boolean {
+        return sharedPreferences.getSession()
     }
 
 }

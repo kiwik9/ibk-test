@@ -2,10 +2,7 @@ package io.kiwik.dein
 
 import io.kiwik.data.api.ApiClient
 import io.kiwik.data.sharedPreferences.AppSharedPreferencesManager
-import io.kiwik.domain.interactors.GetProductsUseCase
-import io.kiwik.domain.interactors.GetTransactionsUseCase
-import io.kiwik.domain.interactors.LoginUseCase
-import io.kiwik.domain.interactors.SignOutUseCase
+import io.kiwik.domain.interactors.*
 import io.kiwik.domain.repository.auth.AuthRepository
 import io.kiwik.domain.repository.product.ProductRepository
 import org.koin.dsl.module
@@ -37,6 +34,11 @@ val appSharedPreferences = module {
 val authRepository = module {
     single { AuthRepository() }
 }
+
 val productRepository = module {
     single { ProductRepository() }
+}
+
+val currentSessionUseCase = module {
+    single { GetCurrentSessionUseCase(get()) }
 }

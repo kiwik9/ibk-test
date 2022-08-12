@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import io.kiwik.ibkapp.databinding.FragmentDashboardBinding
-import io.kiwik.ibkapp.ui.BaseFragment
 
-class OperationsFragment : BaseFragment() {
+class OperationsFragment : Fragment() {
 
     private lateinit var binding: FragmentDashboardBinding
     private lateinit var viewModel: OperationsViewModel
